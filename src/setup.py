@@ -16,6 +16,9 @@ setup(
     description="GitHub action preparing release tags",
     install_requires=get_install_requires(),
     entry_points={
-        "console_scripts": ["tagmunster=tagmunster.main:main"],
+        "console_scripts": [
+            "tagmunster=tagmunster.main:main",
+            "pidiff-bump=tagmunster.pidiff:main",
+        ],
     },
 )
