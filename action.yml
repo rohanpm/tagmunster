@@ -22,4 +22,4 @@ runs:
     - --transformer
     - ${{ inputs.transformer }}
   env:
-    GITHUB_TOKEN: ${{ inputs.repo_token }}
+    GITHUB_TOKEN: ${{ inputs.repo-token }}
