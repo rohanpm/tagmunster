@@ -1,0 +1,25 @@
+name: tagmunster-branch
+description: Create or maintain branch for next tag
+inputs:
+  dest:
+    description: 'Destination branch'
+    required: true
+    default: tagmunster/release
+  transformer:
+    description: 'Command(s) to transform content of repo'
+    required: true
+  repo-token:
+    description: 'Token for pushing to repo'
+    required: true
+  
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - branch
+    - --dest
+    - ${{ inputs.dest }}
+    - --transformer
+    - ${{ inputs.transformer }}
+   env:
+    GITHUB_TOKEN: ${{ inputs.repo_token }}

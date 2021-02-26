@@ -1,0 +1,5 @@
+#!/bin/sh
+# An undocumented transformer for testing the action.
+for file in README*; do
+  { echo ""; echo 'Visited by tagmunster!'; } >> "$file"
+done
