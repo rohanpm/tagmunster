@@ -204,7 +204,8 @@ class BranchCommand:
             raise RuntimeError("(PR doesn't exist despite successful response!)")
 
 
-def main(args: List[str]):
+def main(args: List[str] = None):
+    args = args or sys.argv[1:]
     parser = argparse.ArgumentParser(prog="tagmunster")
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--dest", type=str, default="tagmunster/release")

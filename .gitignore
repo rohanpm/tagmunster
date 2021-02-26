@@ -1,1 +1,3 @@
 test.sh
+*.egg-info
+**/__pycache__/

@@ -1,9 +1,11 @@
 FROM alpine:3.13
 
-# RUN apk update
-RUN apk add -U python3 py3-requests git
+RUN apk add -U python3 py3-requests py3-pip py3-attrs py3-wrapt py3-jsonschema py3-virtualenv git
+# RUN pip install pidiff
 
-COPY tagmunster /usr/local/bin/tagmunster
-COPY tagmunster-test /usr/local/bin/tagmunster-test
+COPY src /tagmunster-src
+RUN pip install --editable /tagmunster-src
 
-ENTRYPOINT ["/usr/local/bin/tagmunster"]
+COPY src/tagmunster-test /usr/local/bin/tagmunster-test
+
+ENTRYPOINT ["/usr/bin/tagmunster"]
