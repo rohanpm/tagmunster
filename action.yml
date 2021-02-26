@@ -16,9 +16,9 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - branch
     - --dest
     - ${{ inputs.dest }}
+    - branch
     - --transformer
     - ${{ inputs.transformer }}
   env:
